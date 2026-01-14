@@ -1,11 +1,12 @@
-// Mobile Menu
+// Mobile Menu Toggle
 const btnMobile = document.getElementById('btn-mobile');
 const menu = document.getElementById('menu');
 const icon = btnMobile.querySelector('i');
 
 btnMobile.addEventListener('click', () => {
     menu.classList.toggle('active');
-    // Troca ícone entre menu e fechar (X)
+    
+    // Alterna ícone (Menu Hamburguer <-> X)
     if(menu.classList.contains('active')) {
         icon.classList.remove('ri-menu-3-line');
         icon.classList.add('ri-close-line');
@@ -15,29 +16,38 @@ btnMobile.addEventListener('click', () => {
     }
 });
 
-// Smooth Scroll para links internos
+// Fecha menu ao clicar em links (Scroll Suave)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        menu.classList.remove('active'); // Fecha menu mobile ao clicar
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        menu.classList.remove('active');
+        icon.classList.add('ri-menu-3-line'); // Reseta ícone
+        icon.classList.remove('ri-close-line');
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// Efeito simples no formulário
-document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('button');
-    const originalText = btn.innerText;
-    
-    btn.innerHTML = '<i class="ri-check-line"></i> Sucesso!';
-    btn.style.background = '#10B981'; // Verde Sucesso
-    
-    setTimeout(() => {
-        btn.innerText = originalText;
-        btn.style.background = ''; // Volta ao original
-        this.reset();
-    }, 3000);
-});
+// Simulação de Envio de Formulário (Visual)
+const form = document.getElementById('waitlistForm');
+if(form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        const originalText = btn.innerText;
+        
+        btn.innerHTML = '<i class="ri-check-line"></i> Sucesso!';
+        btn.style.background = '#10B981'; // Verde Sucesso
+        
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.background = ''; // Volta ao original
+            this.reset();
+        }, 3000);
+    });
+}

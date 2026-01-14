@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>SeuBairro - O Super App Local</title>
-    <meta name="description" content="A evolução do comércio local. Conecte-se aos melhores serviços e lojas da sua região com o SeuBairro.">
+    <title>SeuBairro - Conectando a Economia Local</title>
+    <meta name="description" content="A plataforma que conecta vizinhos aos pequenos negócios. Valorize o comércio local do seu bairro.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,17 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/logo-seubairro.svg">
+    <link rel="icon" type="image/svg" href="assets/logo-seubairro.svg">
 </head>
 <body>
 
-    <div class="glow-bg top-left"></div>
-    <div class="glow-bg bottom-right"></div>
+    <div class="map-grid-bg"></div>
+    <div class="glow-spot top-center"></div>
 
     <header id="header">
         <div class="container header-content">
             <a href="#" class="brand">
+                <img src="assets/logo-seubairro.svg" alt="Logo SeuBairro" class="nav-logo">
                 <div class="brand-text">Seu<span>Bairro</span></div>
             </a>
             
@@ -30,10 +31,15 @@
                 <button aria-label="Abrir Menu" id="btn-mobile">
                     <i class="ri-menu-3-line"></i>
                 </button>
+                
                 <ul id="menu" role="list">
-                    <li><a href="#como-funciona">Funcionalidades</a></li>
-                    <li><a href="#sobre">Nossa Missão</a></li>
-                    <li><a href="#contato" class="btn-primary glow-button">Lista de Espera <i class="ri-arrow-right-line"></i></a></li>
+                    <li><a href="#proposito" class="nav-link">Propósito</a></li>
+                    <li><a href="#para-quem" class="nav-link">Para Quem É</a></li>
+                    <li>
+                        <a href="#contato" class="btn-primary btn-header">
+                            Avisar Lançamento <i class="ri-notification-3-line"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -43,186 +49,225 @@
         <section class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
-                    <div class="badge-new">
-                        <span class="dot"></span> Versão 2.0 em Breve
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span> 
+                        Projeto em Evolução (V2)
                     </div>
-                    <h1>Seu bairro inteiro na <br><span class="gradient-text">palma da sua mão.</span></h1>
-                    <p>Transforme a maneira como você consome e vende localmente. Tecnologia de ponta para conectar vizinhos e impulsionar negócios.</p>
+                    <h1>A tecnologia a favor do <br><span class="gradient-text">Comércio Local.</span></h1>
+                    
+                    <p>Nascido como um projeto acadêmico de destaque no <strong>IFPR</strong>, o SeuBairro está evoluindo para se tornar a principal ferramenta de conexão entre moradores e negócios locais. De vizinho para vizinho.</p>
                     
                     <div class="cta-group">
-                        <a href="#contato" class="btn-primary glow-button">Garantir Acesso VIP</a>
-                        <div class="users-preview">
-                            <div class="avatars">
-                                <span>+500</span>
-                            </div>
-                            <p>moradores já interessados</p>
-                        </div>
+                        <a href="#contato" class="btn-primary glow-button">Quero saber mais</a>
+                        <a href="#proposito" class="btn-text">Entenda a visão <i class="ri-arrow-down-line"></i></a>
                     </div>
                 </div>
                 
                 <div class="hero-visual">
-                    <div class="circle-decoration"></div>
-                    <div class="phone-mockup floating-anim">
-                        <div class="screen">
-                            <div class="app-header">
-                                <div class="dots"></div>
-                                <div class="app-brand">SeuBairro</div>
-                            </div>
-                            <div class="app-body">
-                                <div class="search-bar-skeleton"></div>
-                                <div class="map-preview">
-                                    <div class="pin pin-1"></div>
-                                    <div class="pin pin-2"></div>
-                                </div>
-                                <div class="list-skeleton">
-                                    <div class="item-row"></div>
-                                    <div class="item-row"></div>
-                                    <div class="item-row"></div>
-                                </div>
-                            </div>
-                            <div class="app-footer"></div>
+                    <div class="radar-container">
+                        <div class="radar-circle c1"></div>
+                        <div class="radar-circle c2"></div>
+                        <div class="radar-circle c3"></div>
+                        <div class="radar-sweep"></div>
+                        
+                        <div class="center-pin">
+                            <img src="assets/logo-seubairro.svg" alt="Logo" class="pin-logo">
                         </div>
+
+                        <div class="map-point p1" title="Mercado"><i class="ri-store-2-fill"></i></div>
+                        <div class="map-point p2" title="Serviços"><i class="ri-hammer-fill"></i></div>
+                        <div class="map-point p3" title="Lazer"><i class="ri-restaurant-fill"></i></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="stats-bar">
-            <div class="container stats-grid">
-                <div class="stat-item">
-                    <h3>+100</h3>
-                    <p>Lojas Locais</p>
+        <section class="info-bar">
+            <div class="container info-grid">
+                <div class="info-item">
+                    <i class="ri-building-4-line"></i>
+                    <div>
+                        <strong>Identidade Local</strong>
+                        <span>Focado na sua região</span>
+                    </div>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <h3>Colombo</h3>
-                    <p>Foco Regional</p>
+                <div class="divider"></div>
+                <div class="info-item">
+                    <i class="ri-group-line"></i>
+                    <div>
+                        <strong>Sem Intermediários</strong>
+                        <span>Conexão direta</span>
+                    </div>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Gratuito p/ Usuários</p>
+                <div class="divider"></div>
+                <div class="info-item">
+                    <i class="ri-rocket-line"></i>
+                    <div>
+                        <strong>Inovação Aberta</strong>
+                        <span>Tecnologia acessível</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="como-funciona" class="section-padding">
+        <section id="proposito" class="section-padding">
             <div class="container">
                 <div class="section-header">
-                    <h2>Mais que um App, <span class="text-blue">uma comunidade.</span></h2>
-                    <p>Esqueça as buscas genéricas no Google. Encontre quem está ao seu lado.</p>
+                    <h2>Mais que um mapa, uma comunidade</h2>
+                    <p>Enquanto grandes plataformas focam apenas em rotas e trânsito, nós focamos nas pessoas e nos negócios que fazem o bairro acontecer.</p>
                 </div>
                 
                 <div class="grid-cards">
                     <div class="glass-card">
-                        <div class="icon-box"><i class="ri-map-pin-user-fill"></i></div>
-                        <h3>Geolocalização Precisa</h3>
-                        <p>Nosso algoritmo prioriza o que está realmente perto. Economize tempo e frete comprando do vizinho.</p>
+                        <div class="icon-box"><i class="ri-map-pin-user-line"></i></div>
+                        <h3>Visibilidade Real</h3>
+                        <p>Muitos serviços locais excelentes ficam escondidos nos mapas genéricos. O <strong>SeuBairro</strong> dá destaque igualitário para o pequeno empreendedor.</p>
                     </div>
                     <div class="glass-card highlight">
-                        <div class="icon-box"><i class="ri-store-2-fill"></i></div>
-                        <h3>Vitrine Digital</h3>
-                        <p>Para o comerciante: seu negócio online em minutos. Sem taxas abusivas, direto ao ponto.</p>
+                        <div class="icon-box"><i class="ri-hand-heart-line"></i></div>
+                        <h3>Economia Circular</h3>
+                        <p>Nossa missão é manter o dinheiro circulando na comunidade. Quando você compra do vizinho, todo o bairro se desenvolve.</p>
                     </div>
                     <div class="glass-card">
-                        <div class="icon-box"><i class="ri-chat-smile-3-fill"></i></div>
-                        <h3>Chat Integrado</h3>
-                        <p>Tire dúvidas, peça orçamentos e negocie diretamente pelo aplicativo. Simples e seguro.</p>
+                        <div class="icon-box"><i class="ri-shake-hands-line"></i></div>
+                        <h3>Relacionamento Direto</h3>
+                        <p>Sem algoritmos complexos ou taxas abusivas de entrega. Facilitamos o contato direto para você negociar como preferir.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sobre" class="about-section section-padding">
-            <div class="container split-content">
-                <div class="about-image">
-                    <div class="abstract-visual">
-                        <div class="shape s1"></div>
-                        <div class="shape s2"></div>
-                        <div class="glass-overlay">
-                            <span>De Colombo <br> para o Mundo</span>
-                        </div>
+        <section id="para-quem" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Um ecossistema, duas soluções</h2>
+                    <p>Conectamos as pontas soltas do bairro. Veja como o SeuBairro ajuda você.</p>
+                </div>
+
+                <div class="ecosystem-grid">
+                    <div class="eco-card user-side">
+                        <div class="eco-icon"><i class="ri-user-smile-line"></i></div>
+                        <h3>Para Moradores</h3>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Encontre serviços e produtos a poucos metros de casa.</li>
+                            <li><i class="ri-check-line"></i> Descubra promoções exclusivas da vizinhança.</li>
+                            <li><i class="ri-check-line"></i> Valorize o que é nosso e economize tempo de deslocamento.</li>
+                        </ul>
+                    </div>
+
+                    <div class="eco-card business-side">
+                        <div class="eco-badge">Oportunidade</div>
+                        <div class="eco-icon"><i class="ri-store-3-line"></i></div>
+                        <h3>Para Negócios Locais</h3>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Sua vitrine digital focada em quem realmente compra de você.</li>
+                            <li><i class="ri-check-line"></i> Ferramenta simples: cadastre-se e apareça no mapa.</li>
+                            <li><i class="ri-check-line"></i> Sem taxas de adesão abusivas. Feito para o pequeno crescer.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="about-text">
-                    <span class="tag">Nossa Origem</span>
-                    <h2>Do TCC para o Mercado</h2>
-                    <p>O <strong>SeuBairro</strong> nasceu dentro do IFPR com um propósito claro: usar tecnologia para resolver problemas reais da nossa cidade.</p>
-                    <p>O que era um projeto acadêmico validado com nota máxima agora se torna um produto robusto (V2), desenvolvido com as melhores práticas de engenharia de software.</p>
+            </div>
+        </section>
+
+        <section id="roadmap" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Do Conceito à Realidade</h2>
+                <p>O SeuBairro não é apenas uma ideia. É um projeto com base sólida e um plano claro de execução.</p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-grid">
+                    <div class="timeline-card done">
+                        <div class="timeline-icon"><i class="ri-book-open-line"></i></div>
+                        <span class="step-label">A Fundação</span>
+                        <h3>Validado no IFPR</h3>
+                        <p>O projeto nasceu como TCC, onde a ideia, a viabilidade econômica e a necessidade do comércio de Colombo foram pesquisadas e validadas com nota máxima.</p>
+                    </div>
+
+                    <div class="timeline-card active">
+                        <div class="timeline-badge">Estamos Aqui</div>
+                        <div class="timeline-icon"><i class="ri-code-s-slash-line"></i></div>
+                        <span class="step-label">O Desenvolvimento</span>
+                        <h3>Construção da V2</h3>
+                        <p>Deixamos o código acadêmico para trás. Estamos reescrevendo a plataforma com arquitetura escalável, foco em segurança e design profissional.</p>
+                    </div>
+
+                    <div class="timeline-card future">
+                        <div class="timeline-icon"><i class="ri-rocket-2-line"></i></div>
+                        <span class="step-label">O Lançamento</span>
+                        <h3>Piloto em Colombo</h3>
+                        <p>O lançamento oficial acontecerá primeiro em nossa casa. Um teste piloto com comércios selecionados antes da expansão para toda a região.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roadmap-footer">
+                <p>Quer fazer parte do grupo de teste piloto?</p>
+                <a href="mailto:codexotecnologia@gmail.com" class="link-highlight">Entre em contato conosco <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+  </main> 
+<footer class="footer-modern">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col brand-col">
+                    <div class="footer-brand">
+                        <img src="assets/logo-seubairro.svg" alt="Logo" class="footer-logo-img">
+                        <div class="brand-text">Seu<span>Bairro</span></div>
+                    </div>
+                    <p class="footer-desc">
+                        A plataforma definitiva para conectar vizinhos e fortalecer a economia local. Tecnologia com propósito.
+                    </p>
                     
-                    <ul class="feature-list">
-                        <li><i class="ri-check-line"></i> Código Otimizado e Seguro</li>
-                        <li><i class="ri-check-line"></i> Interface Pensada no Usuário (UX)</li>
-                        <li><i class="ri-check-line"></i> Foco em Performance Mobile</li>
+                    <div class="social-links">
+                        <a href="https://instagram.com/codexotecnologia" target="_blank" aria-label="Instagram da Codexo" title="Siga a Codexo">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/codexo-tecnologia" target="_blank" aria-label="LinkedIn da Codexo" title="Codexo no LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="https://codexo.com.br" target="_blank" aria-label="Site da Codexo" title="Visite a Codexo">
+                            <i class="ri-global-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col nav-col">
+                    <h4>Explorar</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#proposito">Propósito</a></li>
+                        <li><a href="#para-quem">Para Moradores</a></li>
+                        <li><a href="#para-quem">Para Negócios</a></li>
+                        <li><a href="#roadmap">Trajetória</a></li>
                     </ul>
                 </div>
-            </div>
-        </section>
 
-        <section id="contato" class="cta-container">
-            <div class="container">
-                <div class="cta-glass">
-                    <div class="cta-content">
-                        <h2>Pronto para valorizar o local?</h2>
-                        <p>Entre para a lista de espera e receba benefícios exclusivos de fundador no lançamento.</p>
-                        
-                        <form id="waitlistForm" class="modern-form">
-                            <div class="input-group">
-                                <i class="ri-mail-line"></i>
-                                <input type="email" placeholder="seu@email.com" required>
-                            </div>
-                            <button type="submit" class="btn-primary">Inscrever-se Agora</button>
-                        </form>
-                    </div>
+                <div class="footer-col dev-col">
+                    <h4>Tecnologia</h4>
+                    <a href="https://codexo.com.br" target="_blank" class="codexo-badge">
+                        <span class="dev-text">Desenvolvido por</span>
+                        <img src="assets/logo_codexo_nome_branco.svg" alt="Codexo" class="codexo-logo">
+                    </a>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer class="footer-dark">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="brand-text">Seu<span>Bairro</span></div>
-                    <p>Conectando vizinhos, fortalecendo negócios.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="ri-instagram-line"></i></a>
-                        <a href="#"><i class="ri-linkedin-fill"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-nav">
-                    <div>
-                        <h4>Produto</h4>
-                        <ul>
-                            <li><a href="#">Funcionalidades</a></li>
-                            <li><a href="#">Para Lojas</a></li>
-                            <li><a href="#">Roadmap</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#">Privacidade</a></li>
-                            <li><a href="#">Termos</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 SeuBairro. Todos os direitos reservados.</p>
-                
-                <div class="developed-by">
-                    <span>Desenvolvido por</span>
-                    <a href="https://codexo.com.br" target="_blank">
-                        <img src="assets/logo_codexo_nome_branco.svg" alt="Codexo" class="codexo-img"> 
-                    </a>
+                <div class="copyright-text">
+                    <p>&copy; 2025 SeuBairro.</p>
                 </div>
+                
+                <p class="location">
+                    <i class="ri-map-pin-line"></i> Feito em Colombo, PR
+                </p>
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
