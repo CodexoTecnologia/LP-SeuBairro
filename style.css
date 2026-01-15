@@ -1,629 +1,406 @@
 /* =========================================
-   1. VARIÁVEIS & RESET (PALETA COMERCIAL)
+   1. VARIÁVEIS & RESET (TEMA CLARO / CLEAN)
    ========================================= */
 :root {
-    /* Paleta Comercial (Azul Confiança + Dourado Valor) */
-    --bg-dark: #0f172a;      /* Azul Marinho Profundo (SaaS Moderno) */
+    /* Paleta SeuBairro (Azul + Verde Água) */
+    --primary: #2563EB;       /* Azul Royal (Confiança/Tech) */
+    --primary-dark: #1E40AF;  /* Azul Escuro (Hover) */
     
-    /* Azul SeuBairro (Mantido como Principal) */
-    --primary: #3B82F6;      /* Azul Vibrante */
-    --primary-dark: #1D4ED8; /* Azul Escuro para Hover */
+    --accent: #0D9488;        /* Verde Água/Teal (Local/Mapa) - Diferencia da Codexo */
     
-    /* Acento Comercial: Dourado/Ambar (Remete a Valor/Comércio) */
-    /* Substitui o Ciano Neon que era muito "Tech" */
-    --accent: #F59E0B;       
+    /* Fundos Claros */
+    --bg-body: #F8FAFC;       /* Cinza Gelo (Fundo Principal) */
+    --bg-surface: #FFFFFF;    /* Branco Puro (Cards) */
     
-    /* Superfícies */
-    --surface-color: rgba(30, 41, 59, 0.7); /* Slate Glass */
-    --border-color: rgba(255, 255, 255, 0.08); /* Bordas sutis, não neon */
+    /* Tipografia (Escura para contraste) */
+    --text-main: #1E293B;     /* Slate Dark (Quase preto) */
+    --text-muted: #64748B;    /* Cinza Médio */
     
-    /* Tipografia */
-    --text-main: #F8FAFC;    /* Branco Puro */
-    --text-muted: #94A3B8;   /* Cinza Azulado */
+    /* Bordas e Sombras Suaves */
+    --border-light: #E2E8F0;
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    --shadow-hover: 0 10px 25px rgba(37, 99, 235, 0.1);
     
     /* Layout */
     --max-width: 1200px;
     --header-height: 80px;
-    --radius-card: 20px;     /* Arredondamento amigável */
-    --radius-btn: 50px;      /* Botões redondos (Padrão App) */
+    --radius-card: 20px;
+    --radius-btn: 50px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-body);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-a {
-    text-decoration: none !important;
-    color: inherit;
-    transition: all 0.3s ease;
-}
-
+a { text-decoration: none !important; color: inherit; transition: all 0.3s ease; }
 ul { list-style: none; }
 
 /* =========================================
-   2. FUNDO (LIMPO E ELEGANTE)
+   2. BACKGROUND (CLEAN MAP)
    ========================================= */
 .map-grid-bg {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    
-    /* Textura de Pontos (Dots) muito sutil - Menos "Matrix", mais "Design" */
-    background-image: radial-gradient(#334155 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.3;
-    
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    /* Grid sutil cinza no fundo branco */
+    background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.5;
     z-index: -2;
     pointer-events: none;
 }
 
 .glow-spot {
-    position: fixed;
-    width: 800px;
-    height: 800px;
-    /* Glow Azul suave no topo para iluminar a marca */
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 60%);
+    position: fixed; width: 800px; height: 800px;
+    /* Mancha de luz Azul/Teal muito suave */
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 60%);
     border-radius: 50%;
-    z-index: -1;
-    pointer-events: none;
+    z-index: -1; pointer-events: none;
 }
-
-.top-center {
-    top: -300px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+.top-center { top: -300px; left: 50%; transform: translateX(-50%); }
 
 /* =========================================
-   3. NAVBAR (LINKS E LOGO)
+   3. NAVBAR (BRANCA CLEAN)
    ========================================= */
 #header {
-    position: fixed;
-    top: 0; width: 100%; z-index: 1000;
+    position: fixed; top: 0; width: 100%; z-index: 1000;
     height: var(--header-height);
-    background: rgba(15, 23, 42, 0.85); /* Mais sólido para leitura */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.9); /* Branco translúcido */
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
     display: flex; align-items: center; transition: all 0.3s ease;
 }
 
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 24px;
-    width: 100%;
-}
-
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; width: 100%; }
 .header-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-.brand { display: flex; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.nav-logo { height: 32px; width: auto; }
 
-.nav-logo {
-    height: 32px; width: auto;
-    /* Sombra azul suave na logo */
-    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
-}
-
-.brand-text { font-size: 1.25rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
-.brand-text span { color: var(--primary); }
+.brand-text { font-size: 1.35rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.03em; }
+.brand-text span { color: var(--primary); /* Azul no "Bairro" */ }
 
 #menu { display: flex; gap: 40px; align-items: center; }
 
 .nav-link {
     font-size: 0.95rem; font-weight: 500; color: var(--text-muted); position: relative;
 }
-.nav-link:hover { color: #fff; }
+.nav-link:hover { color: var(--primary); }
 
-/* Botão da Navbar (Destaque sutil) */
+/* Botão Navbar Outline */
 .btn-header {
-    padding: 10px 24px;
-    font-size: 0.9rem;
-    border-radius: var(--radius-btn);
-    background: rgba(255, 255, 255, 0.1); /* Branco translúcido */
-    color: #fff;
+    padding: 10px 24px; font-size: 0.9rem; border-radius: var(--radius-btn);
+    background: transparent; color: var(--primary);
+    border: 1px solid var(--primary);
     display: inline-flex; align-items: center; gap: 8px; font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.1);
 }
-
 .btn-header:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    background: var(--primary); color: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transform: translateY(-1px);
 }
 
-#btn-mobile { display: none; background: transparent; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+#btn-mobile { display: none; background: transparent; border: none; color: var(--text-main); font-size: 1.5rem; cursor: pointer; }
 
 /* =========================================
-   4. HERO SECTION (VENDAS)
+   4. HERO SECTION
    ========================================= */
 .hero { padding-top: 160px; padding-bottom: 80px; position: relative; }
 .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
 
-/* Badge com Dourado (Valor/Premium) */
+/* Badge Clean */
 .status-badge {
     display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(245, 158, 11, 0.1); /* Fundo Dourado/Ambar suave */
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    color: var(--accent); /* Texto Dourado */
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 700;
+    background: #EFF6FF; /* Fundo azul bem clarinho */
+    border: 1px solid #DBEAFE;
+    color: var(--primary);
+    padding: 6px 16px; border-radius: 50px;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;
     margin-bottom: 24px;
 }
-
 .pulse-dot {
-    width: 8px; height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent);
+    width: 8px; height: 8px; background: var(--accent); /* Verde Teal */
+    border-radius: 50%; box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
     animation: pulse 2s infinite;
 }
+@keyframes pulse { 0% { transform: scale(0.95); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } 100% { transform: scale(0.95); opacity: 1; } }
 
-@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+.hero-text h1 { font-size: 3.5rem; line-height: 1.15; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; color: var(--text-main); }
 
-.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; }
-
-/* Texto Gradiente Azul Clean */
 .gradient-text {
-    background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* Gradiente Azul para Verde Teal */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
 .hero-text p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 35px; max-width: 520px; font-weight: 400; }
 
 .cta-group { display: flex; align-items: center; gap: 20px; }
 
-/* Botão Principal de Conversão */
+/* Botão Principal Sólido */
 .btn-primary {
-    background: var(--primary);
-    color: white;
-    padding: 16px 32px; /* Maior e mais clicável */
-    border-radius: var(--radius-btn);
-    font-weight: 700;
-    border: none; cursor: pointer;
-    display: inline-flex; align-items: center; gap: 10px;
-    transition: 0.3s;
-    font-size: 1rem;
+    background: var(--primary); color: white;
+    padding: 16px 32px; border-radius: var(--radius-btn);
+    font-weight: 700; border: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
 }
-
 .btn-primary:not(.btn-header):hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.6); /* Sombra difusa azul */
+    background: var(--primary-dark); transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
 }
 
-/* Remove glow excessivo para ficar clean */
-.glow-button { box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); }
-
-.btn-text { color: var(--text-muted); display: flex; align-items: center; gap: 6px; font-size: 1rem; font-weight: 500; }
-.btn-text:hover { color: #fff; }
+.btn-text { color: var(--text-muted); display: flex; align-items: center; gap: 6px; font-size: 1rem; font-weight: 600; }
+.btn-text:hover { color: var(--primary); }
 
 /* =========================================
-   5. RADAR / MAPA (AZUL TECH SUAVE)
+   5. RADAR / MAPA (Versão Clean)
    ========================================= */
 .hero-visual { display: flex; justify-content: center; position: relative; height: 420px; align-items: center; }
 
 .radar-container {
-    width: 400px; height: 400px;
-    position: relative;
-    transform: rotateX(45deg) rotateZ(0deg); 
-    transform-style: preserve-3d;
+    width: 400px; height: 400px; position: relative;
+    transform: rotateX(45deg) rotateZ(0deg); transform-style: preserve-3d;
 }
 
 .radar-circle {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 1px solid rgba(59, 130, 246, 0.2); /* Azul bem suave */
-    background: rgba(59, 130, 246, 0.02); /* Fundo levíssimo */
+    border: 1px solid rgba(37, 99, 235, 0.15); /* Bordas cinza/azuladas */
+    background: rgba(255, 255, 255, 0.4);
 }
-
-.c1 { width: 130px; height: 130px; border-color: rgba(59, 130, 246, 0.4); }
-.c2 { width: 260px; height: 260px; border-style: solid; }
+.c1 { width: 130px; height: 130px; border-color: rgba(37, 99, 235, 0.3); }
+.c2 { width: 260px; height: 260px; border-style: dashed; }
 .c3 { width: 390px; height: 390px; }
 
-/* Radar Sweep Azul */
 .radar-sweep {
     position: absolute; top: 50%; left: 50%; width: 50%; height: 2px;
     background: linear-gradient(90deg, transparent, var(--primary));
-    transform-origin: left center;
-    animation: radar-spin 4s linear infinite;
-    box-shadow: 0 0 15px var(--primary);
+    transform-origin: left center; animation: radar-spin 4s linear infinite;
+    opacity: 0.7;
 }
-
 @keyframes radar-spin { from { transform: translateY(-50%) rotate(0deg); } to { transform: translateY(-50%) rotate(360deg); } }
 
-/* Pino Central */
 .center-pin {
-    position: absolute; top: 50%; left: 50%; 
-    transform: translate(-50%, -50%) rotateX(-45deg);
-    background: transparent; width: 100px; height: 100px;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotateX(-45deg);
+    background: #fff; width: 90px; height: 90px;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    /* Glow Azul Forte */
-    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6));
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2); /* Sombra suave colorida */
     z-index: 10;
 }
+.pin-logo { width: 80%; height: auto; animation: float-logo 3s ease-in-out infinite; }
+@keyframes float-logo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-.pin-logo { width: 90%; height: auto; animation: float-logo 3s ease-in-out infinite; }
-@keyframes float-logo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
-/* Pontos Mapa (Agora Dourados/Ambar para contraste) */
 .map-point {
-    position: absolute; width: 36px; height: 36px;
-    background: #0f172a;
-    border: 1px solid var(--accent); /* Borda Dourada */
-    color: var(--accent);
+    position: absolute; width: 40px; height: 40px;
+    background: #fff; border: 2px solid var(--accent); color: var(--accent);
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem;
-    transform: rotateX(-45deg);
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+    font-size: 1.1rem; transform: rotateX(-45deg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     opacity: 0; animation: fade-in-out 4s infinite;
 }
-
 .p1 { top: 30%; left: 30%; animation-delay: 0.5s; }
 .p2 { top: 70%; left: 70%; animation-delay: 1.5s; }
 .p3 { top: 20%; left: 80%; animation-delay: 2.5s; }
 @keyframes fade-in-out { 0%, 100% { opacity: 0; transform: rotateX(-45deg) scale(0.5); } 50% { opacity: 1; transform: rotateX(-45deg) scale(1); } }
 
 /* =========================================
-   6. INFO BAR (CLEAN)
+   6. INFO BAR (Branca/Cinza)
    ========================================= */
 .info-bar {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    background: rgba(15, 23, 42, 0.5);
+    border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);
+    background: #F1F5F9; /* Fundo Cinza Claro */
     padding: 30px 0; margin-top: 60px;
 }
 .info-grid { display: flex; justify-content: space-between; align-items: center; }
 .info-item { display: flex; align-items: center; gap: 16px; }
-.info-item i { font-size: 2rem; color: var(--primary); /* Ícones Azuis */ }
-.info-item strong { display: block; color: #fff; font-size: 1.05rem; margin-bottom: 4px; }
+.info-item i { font-size: 2rem; color: var(--primary); }
+.info-item strong { display: block; color: var(--text-main); font-size: 1.05rem; margin-bottom: 4px; }
 .info-item span { color: var(--text-muted); font-size: 0.9rem; }
-.divider { width: 1px; height: 40px; background: var(--border-color); }
+.divider { width: 1px; height: 40px; background: #CBD5E1; }
 
 /* =========================================
-   7. SEÇÕES E CARDS (ESTILO APP)
+   7. SEÇÕES E CARDS (Estilo "Paper")
    ========================================= */
 .section-padding { padding: 100px 0; }
 .section-header { text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
-.section-header h2 { font-size: 2.5rem; margin-bottom: 15px; color: #fff; font-weight: 700; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--text-main); font-weight: 800; letter-spacing: -0.5px; }
 .section-header p { color: var(--text-muted); font-size: 1.15rem; }
 .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
 .glass-card {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    padding: 40px;
-    border-radius: var(--radius-card);
+    background: var(--bg-surface); /* Branco */
+    border: 1px solid var(--border-light);
+    padding: 40px; border-radius: var(--radius-card);
     transition: 0.3s; position: relative; overflow: hidden;
+    box-shadow: var(--shadow-card);
 }
-
 .glass-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
-    background: rgba(59, 130, 246, 0.05); /* Leve toque azul no fundo ao passar mouse */
+    border-color: var(--primary); transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
-
 .glass-card.highlight {
-    background: linear-gradient(180deg, rgba(59, 130, 246, 0.08), rgba(30, 41, 59, 0.4));
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: linear-gradient(180deg, #F0FDFA 0%, #FFFFFF 100%); /* Leve toque Teal */
+    border-color: #CCFBF1;
 }
 
 .icon-box { font-size: 2.2rem; color: var(--primary); margin-bottom: 20px; }
-.glass-card h3 { font-size: 1.4rem; margin-bottom: 12px; color: white; }
+.highlight .icon-box { color: var(--accent); } /* Ícone Teal no destaque */
+
+.glass-card h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--text-main); font-weight: 700; }
 .glass-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
 
 /* =========================================
-   8. ECOSSISTEMA (User vs Business)
+   8. ECOSSISTEMA
    ========================================= */
 .ecosystem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-
 .eco-card {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    padding: 45px;
-    border-radius: var(--radius-card);
-    position: relative; overflow: hidden; transition: 0.3s;
+    background: var(--bg-surface); border: 1px solid var(--border-light);
+    padding: 45px; border-radius: var(--radius-card); position: relative; overflow: hidden; transition: 0.3s;
+    box-shadow: var(--shadow-card);
 }
+.eco-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 
-.eco-card:hover { transform: translateY(-5px); }
-
-/* Gradientes sutis para diferenciar */
-.user-side { background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 70%), var(--surface-color); }
-.business-side { background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 70%), var(--surface-color); }
+/* Headers coloridos sutis */
+.user-side { border-top: 5px solid var(--primary); }
+.business-side { border-top: 5px solid var(--accent); }
 
 .eco-icon {
-    font-size: 2rem; color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-    width: 64px; height: 64px;
-    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; color: var(--primary);
+    background: #EFF6FF; /* Fundo icone azul claro */
+    width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
     border-radius: 16px; margin-bottom: 25px;
 }
-.eco-card h3 { font-size: 1.6rem; margin-bottom: 20px; color: #fff; font-weight: 700; }
+.business-side .eco-icon { color: var(--accent); background: #F0FDFA; }
+
+.eco-card h3 { font-size: 1.6rem; margin-bottom: 20px; color: var(--text-main); font-weight: 700; }
 .eco-card ul li { display: flex; gap: 12px; margin-bottom: 16px; color: var(--text-muted); font-size: 1rem; }
 .eco-card ul li i { font-size: 1.2rem; }
-
-/* Cores específicas dos ícones */
-.user-side ul li i { color: var(--primary); } 
-.business-side ul li i { color: var(--accent); } /* Dourado para negócios */
+.user-side ul li i { color: var(--primary); }
+.business-side ul li i { color: var(--accent); }
 
 .eco-badge {
     position: absolute; top: 25px; right: 25px;
-    background: rgba(245, 158, 11, 0.15); color: var(--accent);
+    background: #F0FDFA; color: var(--accent);
     padding: 5px 14px; border-radius: 50px;
     font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    border: 1px solid #CCFBF1;
 }
 
 /* =========================================
-   9. CTA FINAL (FOCO EM CONVERSÃO)
+   9. ROADMAP (TRAJETÓRIA)
    ========================================= */
-.cta-container { padding: 80px 0 140px 0; }
-.cta-glass {
-    background: linear-gradient(135deg, #1e293b, #0f172a); /* Gradiente sólido */
-    border: 1px solid rgba(59, 130, 246, 0.2); /* Borda Azul */
-    border-radius: 30px;
-    padding: 80px 40px; text-align: center; position: relative; overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-}
-.cta-glass::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
-}
-.cta-content h2 { font-size: 2.4rem; margin-bottom: 15px; color: #fff; }
-.cta-content p { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
-
-.modern-form { display: flex; justify-content: center; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
-.input-group { position: relative; width: 100%; max-width: 400px; }
-.input-group i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
-.input-group input {
-    width: 100%; padding: 16px 16px 16px 50px;
-    border-radius: var(--radius-btn);
-    border: 1px solid #334155; background: #0b1120; color: white; outline: none; font-size: 1rem; transition: border-color 0.3s;
-}
-.input-group input:focus { border-color: var(--primary); background: #0f172a; }
-.disclaimer { margin-top: 20px; font-size: 0.9rem; color: #64748B; display: flex; align-items: center; justify-content: center; gap: 6px; }
-
-
-/* =========================================
-   NOVA SEÇÃO: ROADMAP (Linha do Tempo)
-   ========================================= */
-.timeline-wrapper {
-    position: relative;
-    padding: 20px 0;
-    margin-bottom: 40px;
-}
-
-/* Linha conectora no desktop */
+.timeline-wrapper { position: relative; padding: 20px 0; margin-bottom: 40px; }
 .timeline-line {
-    position: absolute;
-    top: 50px; /* Alinha com os ícones */
-    left: 10%;
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        rgba(59, 130, 246, 0.3) 0%, 
-        var(--accent) 50%, 
-        rgba(255, 255, 255, 0.1) 100%);
+    position: absolute; top: 50px; left: 10%; width: 80%; height: 2px;
+    background: linear-gradient(90deg, var(--border-light) 0%, var(--primary) 50%, var(--border-light) 100%);
     z-index: 0;
 }
-
-.timeline-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-    position: relative;
-    z-index: 1;
-}
-
+.timeline-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; position: relative; z-index: 1; }
 .timeline-card {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    padding: 30px;
-    border-radius: var(--radius-card);
-    position: relative;
-    transition: 0.3s;
-    text-align: center;
+    background: var(--bg-surface); border: 1px solid var(--border-light);
+    padding: 30px; border-radius: var(--radius-card); transition: 0.3s; text-align: center;
+    box-shadow: var(--shadow-card);
 }
 
 .timeline-icon {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    background: var(--bg-dark);
-    border: 1px solid var(--border-color);
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #fff; border: 1px solid var(--border-light);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; color: #fff;
-    margin: 0 auto 20px auto;
-    position: relative;
-    z-index: 2; /* Fica acima da linha */
+    font-size: 1.5rem; color: var(--text-muted);
+    margin: 0 auto 20px auto; position: relative; z-index: 2;
 }
 
-/* Estilos Específicos por Fase */
-
-/* FASE 1: CONCLUÍDA (Azul Suave) */
-.timeline-card.done .timeline-icon {
-    border-color: var(--primary);
-    color: var(--primary);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
-}
-
-/* FASE 2: ATUAL (Dourado/Ambar - Destaque) */
-.timeline-card.active {
-    background: linear-gradient(180deg, rgba(245, 158, 11, 0.05), var(--surface-color));
-    border-color: rgba(245, 158, 11, 0.3);
-    transform: translateY(-10px); /* Levemente elevado */
-}
-.timeline-card.active .timeline-icon {
-    background: var(--accent);
-    color: #0f172a; /* Ícone escuro no fundo dourado */
-    border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
-}
-
-/* Badge "Estamos Aqui" */
+/* FASES */
+.timeline-card.done .timeline-icon { border-color: var(--primary); color: var(--primary); background: #EFF6FF; }
+.timeline-card.active { transform: translateY(-10px); border-color: var(--accent); }
+.timeline-card.active .timeline-icon { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3); }
 .timeline-badge {
-    position: absolute;
-    top: -12px; left: 50%; transform: translateX(-50%);
-    background: var(--accent); color: #0f172a;
-    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 50px;
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: white;
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 50px;
 }
 
-/* FASE 3: FUTURO (Cinza/Discreto) */
-.timeline-card.future {
-    opacity: 0.8;
-}
-.timeline-card.future .timeline-icon {
-    color: var(--text-muted);
-    border-style: dashed;
-}
-
-.step-label {
-    display: block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.timeline-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.timeline-card p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-/* Link final de contato */
-.roadmap-footer {
-    text-align: center;
-    margin-top: 40px;
-}
-.roadmap-footer p {
-    display: inline-block;
-    color: var(--text-muted);
-    margin-right: 10px;
-}
-.link-highlight {
-    color: var(--primary);
-    font-weight: 600;
-    display: inline-flex; align-items: center; gap: 5px;
-}
-.link-highlight:hover {
-    color: #fff;
-    text-decoration: underline !important;
-}
-
+.step-label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 5px; font-weight: 600; }
+.timeline-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); font-weight: 700; }
+.timeline-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+.roadmap-footer { text-align: center; margin-top: 40px; color: var(--text-muted); }
+.link-highlight { color: var(--primary); font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
 
 /* =========================================
-   10. FOOTER MODERN (FINAL)
+   10. FOOTER MODERN (ALINHADO)
    ========================================= */
 .footer-modern {
-    background: #0b1120;
+    background: #0f172a; /* Azul Marinho Profundo */
     padding: 80px 0 30px 0;
     position: relative;
+    color: #F1F5F9;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Linha colorida no topo */
 .footer-modern::before {
     content: '';
-    position: absolute; top: 0; left: 0; width: 100%; height: 1px;
+    position: absolute; top: 0; left: 0; width: 100%; height: 2px;
     background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .footer-grid {
     display: grid;
-    /* 3 Colunas balanceadas */
+    /* Colunas: Marca (maior), Nav (média), Dev (média) */
     grid-template-columns: 1.5fr 1fr 1.2fr;
-    gap: 60px;
+    gap: 40px;
     margin-bottom: 60px;
+    align-items: start; /* Garante que tudo comece do topo */
 }
 
-/* --- Coluna 1: Marca --- */
+/* Coluna 1: Marca */
 .brand-col { padding-right: 20px; }
 
 .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-
-.footer-logo-img {
-    height: 32px; width: auto;
-    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
-}
-
-.footer-desc {
-    color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;
-    max-width: 320px; line-height: 1.6;
-}
+.footer-logo-img { height: 32px; width: auto; filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3)); }
+.footer-desc { color: #94A3B8; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; max-width: 350px; }
 
 .social-links { display: flex; gap: 12px; }
-
 .social-links a {
-    width: 38px; height: 38px;
+    width: 40px; height: 40px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: var(--text-muted); transition: 0.3s;
+    color: #94A3B8; transition: 0.3s;
 }
-
 .social-links a:hover {
     background: var(--primary); color: #fff;
-    border-color: var(--primary); transform: translateY(-2px);
+    border-color: var(--primary); transform: translateY(-3px);
 }
 
-/* --- Coluna 2: Navegação --- */
+/* Coluna 2: Navegação */
 .footer-col h4 {
-    color: #fff; font-size: 1rem; margin-bottom: 25px;
-    font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #fff; font-size: 1.1rem; margin-bottom: 25px;
+    font-weight: 700; letter-spacing: -0.01em;
 }
 
 .footer-nav-list li { margin-bottom: 12px; }
-
 .footer-nav-list a {
-    color: var(--text-muted); font-size: 0.95rem; transition: 0.3s; display: inline-block;
+    color: #94A3B8; font-size: 0.95rem; transition: 0.3s; display: inline-block;
 }
+.footer-nav-list a:hover { color: var(--accent); transform: translateX(5px); }
 
-.footer-nav-list a:hover {
-    color: var(--accent); transform: translateX(5px);
-}
-
-/* --- Coluna 3: Badge Codexo (NOVO DESIGN "PILL") --- */
+/* Coluna 3: Codexo Badge (Pill Style) */
 .codexo-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px; /* Espaço entre texto e logo */
-    
+    display: inline-flex; align-items: center; gap: 15px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 12px 24px;
-    border-radius: 50px; /* Formato de pílula/botão redondo */
-    
-    transition: all 0.3s ease;
-    text-decoration: none;
-    max-width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 24px; border-radius: 50px;
+    transition: all 0.3s ease; text-decoration: none;
+    max-width: fit-content; /* Ocupa apenas o espaço necessário */
 }
 
 .codexo-badge:hover {
@@ -634,102 +411,75 @@ ul { list-style: none; }
 }
 
 .dev-text {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-    white-space: nowrap; /* Garante que fique na mesma linha */
+    font-size: 0.75rem; color: #94A3B8;
+    text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+    white-space: nowrap;
 }
 
 .codexo-logo {
-    height: 20px; /* Tamanho equilibrado com o texto */
-    width: auto;
-    filter: grayscale(100%) brightness(2); /* Branco fosco */
-    opacity: 0.7;
-    transition: 0.3s;
+    height: 22px; width: auto;
+    filter: grayscale(100%) brightness(2); opacity: 0.8; transition: 0.3s;
 }
+.codexo-badge:hover .codexo-logo { filter: grayscale(0%) brightness(1); opacity: 1; }
+.codexo-badge:hover .dev-text { color: #fff; }
 
-.codexo-badge:hover .codexo-logo {
-    filter: grayscale(0%) brightness(1); /* Cor original no hover */
-    opacity: 1;
-}
-
-.codexo-badge:hover .dev-text {
-    color: #fff;
-}
-
-/* --- Barra Inferior --- */
+/* Barra Inferior */
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
     display: flex; justify-content: space-between; align-items: center;
     color: #64748B; font-size: 0.85rem;
 }
 
-.copyright-text { display: flex; align-items: center; gap: 10px; }
-.copyright-text a:hover { color: var(--text-main); text-decoration: underline !important; }
-.separator { opacity: 0.3; }
-.location i { color: var(--primary); margin-right: 5px; vertical-align: middle; }
+.location i { color: var(--primary); margin-right: 6px; font-size: 1rem; vertical-align: bottom; }
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2 Colunas */
+        gap: 40px;
+    }
+    .dev-col { grid-column: span 2; } /* Badge ocupa largura total no tablet */
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* 1 Coluna */
+        text-align: center; gap: 50px;
+    }
+    .dev-col { grid-column: span 1; }
+    
+    .brand-col, .footer-brand, .social-links, .codexo-badge {
+        justify-content: center; margin: 0 auto;
+    }
+    .footer-desc { margin: 0 auto 25px auto; }
+    
+    .footer-bottom { flex-direction: column; gap: 15px; }
+}
 /* =========================================
    11. MOBILE
    ========================================= */
 @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
-    .hero-text h1 { font-size: 2.6rem; }
+    .hero-text h1 { font-size: 2.5rem; }
     .cta-group { justify-content: center; }
-    .hero-visual { height: 350px; margin-top: 40px; }
+    .hero-visual { height: 320px; margin-top: 40px; }
     .radar-container { transform: rotateX(45deg) scale(0.8); }
     .info-grid { flex-direction: column; gap: 25px; align-items: flex-start; }
     .divider { display: none; }
-    .footer-top, .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
-    .footer-links a { margin: 0 10px; }
-    .timeline-grid {
-        grid-template-columns: 1fr; /* Um em cima do outro */
-        gap: 40px;
-    }
-    .timeline-line {
-        width: 2px;
-        height: 100%;
-        top: 0; left: 50%; /* Linha vertical no mobile */
-        transform: translateX(-50%);
-        background: linear-gradient(180deg, 
-            rgba(59, 130, 246, 0.3) 0%, 
-            var(--accent) 50%, 
-            rgba(255, 255, 255, 0.1) 100%);
-    }
-    .timeline-card.active {
-        transform: translateY(0);
-    }
-    #btn-mobile { display: block; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
+    .brand-col, .footer-brand, .social-links, .codexo-badge { justify-content: center; margin: 0 auto; }
+    .footer-bottom { flex-direction: column; gap: 15px; }
+    
+    #btn-mobile { display: block; color: var(--text-main); }
     #menu {
         position: fixed; top: var(--header-height); right: 0; width: 100%; height: 0;
-        background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px);
         flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 0;
-        visibility: hidden; overflow: hidden; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        visibility: hidden; overflow: hidden; transition: 0.4s;
+        border-bottom: 1px solid var(--border-light);
     }
-    #menu.active { height: 350px; visibility: visible; padding: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    .nav-link { font-size: 1.1rem; }
-    .ecosystem-grid { grid-template-columns: 1fr; }
-    .eco-card { padding: 30px; }
-}
-
-@media (max-width: 900px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-}
-
-@media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
-    
-    .brand-col, .footer-brand, .social-links, .codexo-badge {
-        justify-content: center;
-        margin: 0 auto;
-    }
-    
-    .footer-desc { margin: 0 auto 25px auto; }
-    
-    .footer-bottom { flex-direction: column; gap: 15px; }
-    .copyright-text { flex-direction: column; gap: 5px; }
-    .separator { display: none; }
+    #menu.active { height: 350px; visibility: visible; padding: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .ecosystem-grid, .timeline-grid { grid-template-columns: 1fr; }
+    .timeline-line { width: 2px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
 }
